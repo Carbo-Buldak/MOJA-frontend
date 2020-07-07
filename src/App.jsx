@@ -1,10 +1,15 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import { GlobalStyle } from './GlobalStyle';
+import Router from './Router';
 
 const App = () => {
   return (
-    <div>
-      <div>안녕</div>
-    </div>
+    <BrowserRouter>
+      <GlobalStyle />
+      <Router />
+    </BrowserRouter>
   );
 };
 
