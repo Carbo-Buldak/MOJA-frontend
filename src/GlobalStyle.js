@@ -90,3 +90,5 @@ export const GlobalStyle = createGlobalStyle `
 }
 
   `;
+
+export const MainColor = "#83D2F0";
