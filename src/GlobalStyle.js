@@ -1,9 +1,10 @@
-import {
+import styled, {
   createGlobalStyle,
   GlobalStyleComponent,
   DefaultTheme,
 } from 'styled-components';
-export const GlobalStyle = createGlobalStyle `
+// import  from 'styled-components';
+export const GlobalStyle = createGlobalStyle`
 @import url("https://www.fontzip.com/storage/2018/12/11/play-pretend/webfonts/PlayPretend.css");
 @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
   html, body, div, span, applet, object, iframe,
@@ -91,4 +92,14 @@ export const GlobalStyle = createGlobalStyle `
 
   `;
 
-export const MainColor = "#83D2F0";
+export const MainColor = '#83D2F0';
+
+export const DefaultButton = styled.button`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  font-size: ${(props) => props.fontSize};
+  text-align: center;
+  color: #fff;
+  border-radius: 10rem;
+  background-color: #83d2f0;
+`;
