@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
   display: flex;
   height: 5rem;
   padding: 0 21.25rem;
