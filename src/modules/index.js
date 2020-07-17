@@ -4,9 +4,11 @@ import { all, call } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 
 import apply from './apply/apply';
+import modal from './modal/modal';
 
 const rootReducer = combineReducers({
   apply,
+  modal,
 });
 
 const sagaMiddleWare = createSagaMiddleware();
