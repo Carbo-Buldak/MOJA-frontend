@@ -4,12 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
 import Router from './Router';
 import { Footer } from './components';
-import { HeaderContainer } from './containers';
+import { HeaderContainer, ModalContainer } from './containers';
 
 const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
+      <ModalContainer />
       <HeaderContainer />
       <Router />
       <Footer />
