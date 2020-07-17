@@ -1,5 +1,5 @@
 const getVideoThumbnail = (youtubeId) => {
-  const videoThumbnail = `http://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+  const videoThumbnail = `http://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
   return videoThumbnail;
 };
 
