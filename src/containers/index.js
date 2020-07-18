@@ -1,9 +1,10 @@
-import HeaderContainer from './HeaderContainer';
-import MainContainer from './MainContainer';
-import PopularVideoContainer from './PopularVideoContainer';
-import WaitingVideoContainer from './WaitingVideoContainer';
-import ApplyContainer from './ApplyContainer';
-import ModalContainer from './ModalContainer'
+import HeaderContainer from './Header/HeaderContainer';
+import MainContainer from './Main/MainContainer';
+import PopularVideoContainer from './Video/PopularVideoContainer';
+import WaitingVideoContainer from './Video/WaitingVideoContainer';
+import ApplyContainer from './Apply/ApplyContainer';
+import ModalContainer from './Modal/ModalContainer'
+import ModalHeaderContainer from './Modal/ModalHeaderContainer'
 
 export {
   MainContainer,
@@ -11,5 +12,6 @@ export {
   PopularVideoContainer,
   WaitingVideoContainer,
   ApplyContainer,
-  ModalContainer
+  ModalContainer,
+  ModalHeaderContainer
 }

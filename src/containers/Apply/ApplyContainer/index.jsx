@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { getApplyData } from '../../modules/apply/apply';
+import { getApplyData } from '../../../modules/apply/apply';
 
-import { ApplyModal } from '../../components';
+import { ApplyModal } from '../../../components';
 
 const ApplyContainer = () => {
   const dispatch = useDispatch();
@@ -17,6 +17,6 @@ const ApplyContainer = () => {
       <ApplyModal getApplyData={setApplyData} />
     </div>
   );
-}; 
+};
 
 export default ApplyContainer;
