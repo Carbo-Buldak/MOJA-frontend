@@ -6,7 +6,7 @@ import { DefaultButton } from '../../GlobalStyle';
 import SearchVideo from './SearchVideo/index';
 import UserProfile from './UserProfile/index';
 
-const Header = () => {
+const Header = ({ changeModal }) => {
   const isLogin = true;
   return (
     <S.HeaderWrapper>
@@ -16,7 +16,12 @@ const Header = () => {
       </S.HeaderImmutableContent>
       {isLogin ? (
         <>
-          <DefaultButton width="7.25rem" height="2.5rem" fontSize="1rem">
+          <DefaultButton
+            width="7.25rem"
+            height="2.5rem"
+            fontSize="1rem"
+            onClick={() => changeModal('apply')}
+          >
             자막 요청하기
           </DefaultButton>
           <UserProfile />

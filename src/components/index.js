@@ -6,6 +6,11 @@ import Main from './Main';
 import VideoList from './VideoList';
 import VideoListItem from './VideoList/VideoListItem';
 import MainVideoList from './Main/MainVideoList/index'
+import Modal from './Modals'
+import ModalHeader from './Modals/ModalHeader'
+import ModalContent from './Modals/ModalContent'
+import Apply from './Apply'
+import ApplyModal from './Apply/ApplyModal'
 
 export {
   Header,
@@ -15,5 +20,10 @@ export {
   Main,
   VideoList,
   VideoListItem,
-  MainVideoList
+  MainVideoList,
+  Modal,
+  ModalHeader,
+  ModalContent,
+  Apply,
+  ApplyModal
 };
