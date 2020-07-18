@@ -4,6 +4,7 @@ import { DefaultButton } from '../../../GlobalStyle';
 import * as S from './style';
 import * as Icon from '../../../assets';
 import ModalHeader from '../../Modals/ModalHeader';
+import ModalHeaderContainer from '../../../containers/Modal/ModalHeaderContainer';
 import getVideoId from '../../../utils/getVideoId';
 import getVideoThumbnail from '../../../utils/getVideoThumbnail';
 import checkValidateUrl from '../../../utils/checkValidateUrl';
@@ -49,7 +50,7 @@ const ApplyModal = ({ getApplyData }) => {
 
   return (
     <S.ApplyModalWrapper>
-      <ModalHeader
+      <ModalHeaderContainer
         modalTitle="자막 요청하기"
         modalIcon={Icon.upload.apply_video}
       />
