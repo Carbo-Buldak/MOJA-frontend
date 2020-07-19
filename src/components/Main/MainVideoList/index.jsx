@@ -2,21 +2,22 @@ import React from 'react';
 
 import * as S from './style';
 import * as Icon from '../../../assets';
-import VideoList from '../../VideoList';
+import VideoList from '../../Atoms/VideoList';
+import VideoType from '../../Atoms/VideoType';
 
 const MainVideoList = ({ videoType, videoListData }) => {
   return (
     <S.MainVideoListWrapper>
       {videoType === 0 ? (
-        <S.VideoTypeWrapper>
-          <S.VideoType>자막을 기다리는 영상</S.VideoType>
-          <S.VideoTypeIcon src={Icon.feed.wait_video} />
-        </S.VideoTypeWrapper>
+        <VideoType
+          videoType="자막을 기다리는 영상"
+          videoTypeIcon={Icon.feed.wait_video}
+        />
       ) : (
-        <S.VideoTypeWrapper>
-          <S.VideoType>인기영상</S.VideoType>
-          <S.VideoTypeIcon src={Icon.feed.popular_video} />
-        </S.VideoTypeWrapper>
+        <VideoType
+          videoType="인기 영상"
+          videoTypeIcon={Icon.feed.popular_video}
+        />
       )}
       <S.ShowMoreVideosBtn>더보기</S.ShowMoreVideosBtn>
       <VideoList videoListData={videoListData} />
