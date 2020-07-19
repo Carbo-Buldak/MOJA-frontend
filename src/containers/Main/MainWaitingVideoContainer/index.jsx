@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MainVideoList } from '../../../components';
 
-const WaitingVideoContainer = () => {
+const MainWaitingVideoContainer = () => {
   const videoListDummy = {
     videos: [
       {
@@ -54,4 +54,4 @@ const WaitingVideoContainer = () => {
   return <MainVideoList videoType={0} videoListData={videoListDummy} />;
 };
 
-export default WaitingVideoContainer;
+export default MainWaitingVideoContainer;
