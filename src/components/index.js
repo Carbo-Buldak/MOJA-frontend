@@ -32,5 +32,7 @@ export {
   Apply,
   ApplyModal,
   VideoFeed,
-  VideoCategory
+  VideoCategory,
+  VideoCategoryList,
+  VideoCategoryItem
 };
