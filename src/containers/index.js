@@ -1,17 +1,23 @@
 import HeaderContainer from './Header/HeaderContainer';
 import MainContainer from './Main/MainContainer';
-import PopularVideoContainer from './Video/PopularVideoContainer';
-import WaitingVideoContainer from './Video/WaitingVideoContainer';
+import MainPopularVideoContainer from './Main/MainPopularVideoContainer';
+import MainWaitingVideoContainer from './Main/MainWaitingVideoContainer';
 import ApplyContainer from './Apply/ApplyContainer';
-import ModalContainer from './Modal/ModalContainer'
-import ModalHeaderContainer from './Modal/ModalHeaderContainer'
+import ModalContainer from './Modal/ModalContainer';
+import ModalHeaderContainer from './Modal/ModalHeaderContainer';
+import CategoryContainer from './VideoFeed/CategoryContainer';
+import PopularVideoContainer from './VideoFeed/PopularVideoContainer';
+import WaitingVideoContainer from './VideoFeed/WaitingVideoContainer'
 
 export {
   MainContainer,
   HeaderContainer,
-  PopularVideoContainer,
-  WaitingVideoContainer,
+  MainPopularVideoContainer,
+  MainWaitingVideoContainer,
   ApplyContainer,
   ModalContainer,
-  ModalHeaderContainer
+  ModalHeaderContainer,
+  CategoryContainer,
+  PopularVideoContainer,
+  WaitingVideoContainer
 }

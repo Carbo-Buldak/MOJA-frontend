@@ -5,13 +5,16 @@ import * as S from './style';
 import { DefaultButton } from '../../GlobalStyle';
 import SearchVideo from './SearchVideo/index';
 import UserProfile from './UserProfile/index';
+import { Link } from 'react-router-dom';
 
 const Header = ({ changeModal }) => {
   const isLogin = true;
   return (
     <S.HeaderWrapper>
       <S.HeaderImmutableContent>
-        <S.Logo src={Icon.logo.moja} />
+        <Link to="/">
+          <S.Logo src={Icon.logo.moja} />
+        </Link>
         <SearchVideo />
       </S.HeaderImmutableContent>
       {isLogin ? (

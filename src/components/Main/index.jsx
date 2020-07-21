@@ -1,13 +1,16 @@
 import React from 'react';
 
 import * as S from './style';
-import { PopularVideoContainer, WaitingVideoContainer } from '../../containers';
+import {
+  MainPopularVideoContainer,
+  MainWaitingVideoContainer,
+} from '../../containers';
 
 const Main = () => {
   return (
     <S.MainWrapper>
-      <PopularVideoContainer />
-      <WaitingVideoContainer />
+      <MainPopularVideoContainer />
+      <MainWaitingVideoContainer />
     </S.MainWrapper>
   );
 };

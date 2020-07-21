@@ -12,17 +12,6 @@ export const VideoTypeWrapper = styled.div `
   flex-direction: row;
 `;
 
-export const VideoType = styled.p `
-  font-size: 1.875rem;
-  font-weight: 600;
-  margin-right: 0.5625rem;
-`;
-
-export const VideoTypeIcon = styled.img `
-  width: 1.438rem;
-  height: 1.438rem;
-`;
-
 export const ShowMoreVideosBtn = styled.button `
   position: relative;
   left: 71.88rem;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import * as S from './style';
-import * as Icon from '../../../assets';
+import * as Icon from '../../../../assets';
 
 const VideoListItem = ({ url, title, count }) => {
   const [isHover, setIsHover] = useState(false);
