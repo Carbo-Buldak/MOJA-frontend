@@ -7,7 +7,7 @@ const VideoList = ({ videoListData }) => {
   return (
     <S.VideoListWrapper>
       {videoListData != null ? (
-        videoListData.videos.map((video) => (
+        videoListData.map((video) => (
           <VideoListItem
             url={video.url}
             title={video.title}
