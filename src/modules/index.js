@@ -5,10 +5,12 @@ import createSagaMiddleware from 'redux-saga';
 
 import apply from './apply/apply';
 import modal from './modal/modal';
+import videoSort from './videoSort/videoSort';
 
 const rootReducer = combineReducers({
   apply,
   modal,
+  videoSort,
 });
 
 const sagaMiddleWare = createSagaMiddleware();
