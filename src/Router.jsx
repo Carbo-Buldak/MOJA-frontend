@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { WriteSubtitle } from './components';
-
 import {
   MainContainer,
   PopularVideoContainer,
   WaitingVideoContainer,
+  WriteSubtitleContainer,
 } from './containers';
 
 const Router = () => (
@@ -14,7 +13,7 @@ const Router = () => (
     <Route exact path="/" component={MainContainer} />
     <Route path="/popularVideo" component={PopularVideoContainer} />
     <Route path="/waitingVideo" component={WaitingVideoContainer} />
-    <Route path="/writeSubtitle" component={WriteSubtitle} />
+    <Route path="/writeSubtitle" component={WriteSubtitleContainer} />
     <Route component={() => <Redirect to="/" />} />
   </Switch>
 );
