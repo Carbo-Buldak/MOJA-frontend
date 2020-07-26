@@ -1,14 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+
 import setTimeToString from '../../../utils/setTimeToString';
-
 import { WriteSubtitle } from '../../../components';
+import {
+  applySubtileList,
+  temporarySaveSubtitleList,
+} from '../../../modules/writeSubtitle/writeSubtitle';
 
-const WriteSubtitleContainer = () => {
+const WriteSubtitleContainer = ({
+  savedSubtitleList,
+  applySubtitle,
+  temporarySubtitleList,
+  videoTitle,
+  videoUrl,
+}) => {
   const [duration, setDuration] = useState(0);
   const [played, setPlayed] = useState(0);
-  const [subtitleList, setSubtitleList] = useState([
-    { playedTime: '', subtitle: '' },
-  ]);
+  const [subtitleList, setSubtitleList] = useState(savedSubtitleList);
+
+  const videoInfo = {
+    videoUrl,
+    videoTitle,
+  };
 
   const handleDuration = (duration) => {
     console.log('onDuration', duration);
@@ -21,14 +35,59 @@ const WriteSubtitleContainer = () => {
     console.log('onProgress', setTimeToString(state.playedSeconds));
   };
 
+  const addSubtitleList = (subtitle) => {
+    const playedTime = played;
+    const subtitleItem = {
+      playedTime,
+      subtitle,
+    };
+    setSubtitleList(subtitleList.concat(subtitleItem));
+    console.log(subtitleItem);
+    console.log(subtitleList);
+  };
+
+  const onApplySubtitleList = (type) => {
+    if (type === 0) {
+      temporarySaveSubtitleList(subtitleList);
+    } else if (type === 1) {
+      applySubtitle(subtitleList);
+    }
+  };
+
+  useEffect(() => {
+    console.log(savedSubtitleList);
+  }, [savedSubtitleList]);
   return (
     <div>
       <WriteSubtitle
+        videoInfo={videoInfo}
+        subtitleList={subtitleList}
         handleDuration={handleDuration}
         handleProgress={handleProgress}
+        addSubtitleList={addSubtitleList}
+        onApplySubtitleList={onApplySubtitleList}
       />
     </div>
   );
 };
 
-export default WriteSubtitleContainer;
+const mapStateToProps = (state) => {
+  return {
+    savedSubtitleList: state.writeSubtitle.subtitleList,
+    videoUrl: state.video.videoUrl,
+    videoTitle: state.video.videoTitle,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    applySubtitle: (subtitleList) => dispatch(applySubtileList(subtitleList)),
+    temporarySubtitleList: (subtitleList) =>
+      dispatch(temporarySaveSubtitleList(subtitleList)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(WriteSubtitleContainer);

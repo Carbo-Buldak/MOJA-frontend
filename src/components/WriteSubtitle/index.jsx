@@ -7,10 +7,30 @@ import * as Icons from '../../assets';
 import VideoType from '../Atoms/VideoType';
 import SubtitleList from './SubtitleList';
 
-const WriteSubtitle = ({ videoTitle }) => {
+const WriteSubtitle = ({
+  videoInfo,
+  handleDuration,
+  handleProgress,
+  addSubtitleList,
+  subtitleList,
+  onApplySubtitleList,
+}) => {
+  const [subtitle, setSubtitle] = useState('');
   const videoRef = useRef(null);
-  const videoDummyTitle =
-    '영혼의 꽃 킨드레드 (Spirit Blossom Kindred Skin Preview)';
+
+  const videoUrl = `https://www.youtube.com/watch?v=${videoInfo.videoUrl}`;
+  console.log(videoUrl);
+
+  const changeSubtitle = (e) => {
+    console.log(subtitle);
+    setSubtitle(e.target.value);
+  };
+
+  const addSubtitle = () => {
+    addSubtitleList(subtitle);
+    setSubtitle('');
+  };
+
   return (
     <S.WriteSubtitleWrapper>
       <VideoType
@@ -21,21 +41,31 @@ const WriteSubtitle = ({ videoTitle }) => {
         width="56.25rem"
         height="31.63rem"
         ref={videoRef}
-        url="https://www.youtube.com/watch?v=Opm9vrqFMMk"
+        url={videoUrl}
         controls={true}
+        onDuration={handleDuration}
+        onProgress={handleProgress}
       />
-      <S.VideoTitle>{videoDummyTitle}</S.VideoTitle>
+      <S.VideoTitle>{videoInfo.videoTitle}</S.VideoTitle>
       <S.WriteSubtitleInputWrapper>
         <S.WriteSubtitleText for="writeSubtitle">자막입력</S.WriteSubtitleText>
-        <S.WriteSubtitleInput name="writeSubtitle" />
-        <DefaultButton width="4.375rem" height="2.688rem">
+        <S.WriteSubtitleInput
+          name="writeSubtitle"
+          value={subtitle}
+          onChange={changeSubtitle}
+        />
+        <DefaultButton width="4.375rem" height="2.688rem" onClick={addSubtitle}>
           입력
         </DefaultButton>
       </S.WriteSubtitleInputWrapper>
-      <SubtitleList />
+      <SubtitleList subtitleList={subtitleList} />
       <S.SaveButtonWrapper>
-        <S.TemporarySaveSubtitleButton>임시저장</S.TemporarySaveSubtitleButton>
-        <S.SaveSubtitleButton>저장</S.SaveSubtitleButton>
+        <S.TemporarySaveSubtitleButton onClick={() => onApplySubtitleList(0)}>
+          임시저장
+        </S.TemporarySaveSubtitleButton>
+        <S.SaveSubtitleButton onClick={() => onApplySubtitleList(1)}>
+          저장
+        </S.SaveSubtitleButton>
       </S.SaveButtonWrapper>
     </S.WriteSubtitleWrapper>
   );

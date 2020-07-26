@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as S from './style';
@@ -7,7 +7,7 @@ import VideoType from '../Atoms/VideoType';
 import VideoCategory from './VideoCategory';
 import VideoList from '../Atoms/VideoList';
 
-const VideoFeed = ({ videoType, videoListData }) => {
+const VideoFeed = ({ videoType, videoListData, getSelectedVideoUrl }) => {
   return (
     <S.VideoFeedWrapper>
       <S.MainVideoListWrapper>
@@ -38,7 +38,10 @@ const VideoFeed = ({ videoType, videoListData }) => {
             </S.MoveOtherVideoBtn>
           </Link>
         )}
-        <VideoList videoListData={videoListData} />
+        <VideoList
+          videoListData={videoListData}
+          getSelectedVideoUrl={getSelectedVideoUrl}
+        />
       </S.MainVideoListWrapper>
     </S.VideoFeedWrapper>
   );

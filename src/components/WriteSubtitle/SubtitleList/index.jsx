@@ -4,25 +4,20 @@ import * as S from './style';
 import SubtitleItem from './SubtitleItem';
 
 const SubtitleList = React.memo(({ subtitleList }) => {
-  const subtitleDummy = [
-    { playedTime: 3600, subtitle: '짱아야' },
-    { playedTime: 3600, subtitle: '짱아야' },
-    { playedTime: 3600, subtitle: '짱아야' },
-    { playedTime: 3600, subtitle: '짱아야' },
-    { playedTime: 3600, subtitle: '짱아야' },
-    { playedTime: 3600, subtitle: '짱아야' },
-    { playedTime: 3600, subtitle: '짱아야' },
-  ];
   return (
     <S.SubtitleListWrapper>
-      {subtitleDummy.map((subtitleItem, dataIndex) => (
-        <SubtitleItem
-          key={subtitleItem.playedTime}
-          subtitleIndex={dataIndex}
-          subtitle={subtitleItem.subtitle}
-          playedTime={subtitleItem.playedTime}
-        />
-      ))}
+      {subtitleList.length > 0 ? (
+        subtitleList.map((subtitleItem, dataIndex) => (
+          <SubtitleItem
+            key={subtitleItem.playedTime}
+            subtitleIndex={dataIndex}
+            subtitle={subtitleItem.subtitle}
+            playedTime={subtitleItem.playedTime}
+          />
+        ))
+      ) : (
+        <div>자막을 입력해보세요</div>
+      )}
     </S.SubtitleListWrapper>
   );
 });

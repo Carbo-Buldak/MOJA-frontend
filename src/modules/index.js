@@ -6,15 +6,19 @@ import createSagaMiddleware from 'redux-saga';
 import apply from './apply/apply';
 import modal from './modal/modal';
 import videoSort from './videoSort/videoSort';
+import video from './video/video';
 import popularVideo from './videoList/popularVideo/popularVideo';
 import waitingVideo from './videoList/waitingVideo/waitingVideo';
+import writeSubtitle from './writeSubtitle/writeSubtitle';
 
 const rootReducer = combineReducers({
   apply,
   modal,
+  video,
   videoSort,
   popularVideo,
   waitingVideo,
+  writeSubtitle,
 });
 
 const sagaMiddleWare = createSagaMiddleware();

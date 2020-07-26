@@ -3,15 +3,17 @@ import React from 'react';
 import * as S from './style';
 import VideoListItem from './VideoListItem/index';
 
-const VideoList = ({ videoListData }) => {
+const VideoList = ({ videoListData, getSelectedVideoUrl }) => {
   return (
     <S.VideoListWrapper>
       {videoListData != null ? (
         videoListData.map((video) => (
           <VideoListItem
+            key={video.url}
             url={video.url}
             title={video.title}
             count={video.count}
+            getSelectedVideoUrl={getSelectedVideoUrl}
           />
         ))
       ) : (
