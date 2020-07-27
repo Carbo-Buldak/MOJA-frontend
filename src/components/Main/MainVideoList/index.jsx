@@ -6,7 +6,7 @@ import * as Icon from '../../../assets';
 import VideoList from '../../Atoms/VideoList';
 import VideoType from '../../Atoms/VideoType';
 
-const MainVideoList = ({ videoType, videoListData }) => {
+const MainVideoList = ({ videoType, videoListData, getSelectedVideoUrl }) => {
   return (
     <S.MainVideoListWrapper>
       {videoType === 0 ? (
@@ -31,7 +31,10 @@ const MainVideoList = ({ videoType, videoListData }) => {
         </>
       )}
 
-      <VideoList videoListData={videoListData} />
+      <VideoList
+        videoListData={videoListData}
+        getSelectedVideoUrl={getSelectedVideoUrl}
+      />
     </S.MainVideoListWrapper>
   );
 };

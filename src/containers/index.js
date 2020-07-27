@@ -8,6 +8,7 @@ import ModalHeaderContainer from './Modal/ModalHeaderContainer';
 import CategoryContainer from './VideoFeed/CategoryContainer';
 import PopularVideoContainer from './VideoFeed/PopularVideoContainer';
 import WaitingVideoContainer from './VideoFeed/WaitingVideoContainer'
+import WriteSubtitleContainer from './WriteSubtitle/WriteSubtitleContainer'
 
 export {
   MainContainer,
@@ -19,5 +20,6 @@ export {
   ModalHeaderContainer,
   CategoryContainer,
   PopularVideoContainer,
-  WaitingVideoContainer
+  WaitingVideoContainer,
+  WriteSubtitleContainer
 }

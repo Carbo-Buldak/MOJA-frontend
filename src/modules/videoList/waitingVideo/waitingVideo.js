@@ -11,15 +11,13 @@ export const getWaitingVideo = (sorting, skips) => ({
 });
 
 const initialState = {
-  videoList: [
-    {
-      title: '짱구는 못말려',
-      url: 'lQh78nQeGJg1',
-      status: 1,
-      requested_date: '2020-05-17T15:00:00.000+00:00',
-      count: 20,
-    },
-  ],
+  videoList: [{
+    title: '남자아이돌 신나는 여름노래모음｜KPOP BOY GROUP｜IDOL PLAYLIST',
+    url: '_g--oHmv86I&t=438s',
+    status: 1,
+    requested_date: '2020-05-17T15:00:00.000+00:00',
+    count: 20,
+  }, ],
 };
 
 export default function WaitingVideo(state = initialState, action) {
