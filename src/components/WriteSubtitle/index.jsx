@@ -14,6 +14,7 @@ const WriteSubtitle = ({
   addSubtitleList,
   subtitleList,
   onApplySubtitleList,
+  deleteSubtitle,
 }) => {
   const [subtitle, setSubtitle] = useState('');
   const videoRef = useRef(null);
@@ -69,7 +70,10 @@ const WriteSubtitle = ({
           입력
         </S.WriteSubtitleButton>
       </S.WriteSubtitleInputWrapper>
-      <SubtitleList subtitleList={subtitleList} />
+      <SubtitleList
+        subtitleList={subtitleList}
+        deleteSubtitle={deleteSubtitle}
+      />
       <S.SaveButtonWrapper>
         <S.TemporarySaveSubtitleButton onClick={() => onApplySubtitleList(0)}>
           임시저장

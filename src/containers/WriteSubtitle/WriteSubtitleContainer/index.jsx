@@ -55,9 +55,12 @@ const WriteSubtitleContainer = ({
     }
   };
 
-  // const deleteSubtitle = (id) => {
-  //   setSubtitleList(subtitleList.filter(id => id !== ));
-  // };
+  const deleteSubtitle = (id) => {
+    setSubtitleList(
+      subtitleList.filter((subtitleListItem, index) => index !== id),
+    );
+  };
+
   useEffect(() => {
     console.log(savedSubtitleList);
   }, [savedSubtitleList]);
@@ -70,6 +73,7 @@ const WriteSubtitleContainer = ({
         handleProgress={handleProgress}
         addSubtitleList={addSubtitleList}
         onApplySubtitleList={onApplySubtitleList}
+        deleteSubtitle={deleteSubtitle}
       />
     </div>
   );

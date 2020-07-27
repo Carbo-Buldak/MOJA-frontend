@@ -3,7 +3,7 @@ import React from 'react';
 import * as S from './style';
 import SubtitleItem from './SubtitleItem';
 
-const SubtitleList = React.memo(({ subtitleList }) => {
+const SubtitleList = React.memo(({ subtitleList, deleteSubtitle }) => {
   return (
     <S.SubtitleListWrapper>
       {subtitleList.length > 0 ? (
@@ -13,6 +13,7 @@ const SubtitleList = React.memo(({ subtitleList }) => {
             subtitleIndex={dataIndex}
             subtitle={subtitleItem.subtitle}
             playedTime={subtitleItem.playedTime}
+            deleteSubtitle={deleteSubtitle}
           />
         ))
       ) : (
