@@ -19,10 +19,8 @@ const WriteSubtitle = ({
   const videoRef = useRef(null);
 
   const videoUrl = `https://www.youtube.com/watch?v=${videoInfo.videoUrl}`;
-  console.log(videoUrl);
 
   const changeSubtitle = (e) => {
-    console.log(subtitle);
     setSubtitle(e.target.value);
   };
 
