@@ -5,7 +5,12 @@ import { ViewSubtitle } from '../../../components';
 import { getVideoInfo } from '../../../modules/video/video';
 import setTimeToString from '../../../utils/setTimeToString';
 
-const ViewSubtitleContainer = ({ videoUrl, videoTitle, videoInfo }) => {
+const ViewSubtitleContainer = ({
+  videoUrl,
+  videoTitle,
+  videoInfo,
+  getVideoDetailInfo,
+}) => {
   const [duration, setDuration] = useState(0);
   const [played, setPlayed] = useState(0);
   const [nowIndex, setNowIndex] = useState(0);
@@ -41,7 +46,7 @@ const ViewSubtitleContainer = ({ videoUrl, videoTitle, videoInfo }) => {
   };
 
   useEffect(() => {
-    getVideoInfo(videoUrl);
+    getVideoDetailInfo(videoUrl);
   }, []);
 
   useEffect(() => {
@@ -71,7 +76,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getVideoInfo: (videoUrl) => dispatch(getVideoInfo(videoUrl)),
+    getVideoDetailInfo: (videoUrl) => dispatch(getVideoInfo(videoUrl)),
   };
 };
 
