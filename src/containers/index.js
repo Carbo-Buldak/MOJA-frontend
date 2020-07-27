@@ -9,6 +9,7 @@ import CategoryContainer from './VideoFeed/CategoryContainer';
 import PopularVideoContainer from './VideoFeed/PopularVideoContainer';
 import WaitingVideoContainer from './VideoFeed/WaitingVideoContainer'
 import WriteSubtitleContainer from './WriteSubtitle/WriteSubtitleContainer'
+import ViewSubtitleContainer from './ViewSubtitle/ViewSubtitleContainer'
 
 export {
   MainContainer,
@@ -21,5 +22,6 @@ export {
   CategoryContainer,
   PopularVideoContainer,
   WaitingVideoContainer,
-  WriteSubtitleContainer
+  WriteSubtitleContainer,
+  ViewSubtitleContainer
 }
