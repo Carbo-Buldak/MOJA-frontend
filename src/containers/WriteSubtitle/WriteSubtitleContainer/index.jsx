@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 
 import setTimeToString from '../../../utils/setTimeToString';
 import { WriteSubtitle } from '../../../components';
@@ -18,6 +19,7 @@ const WriteSubtitleContainer = ({
   const [duration, setDuration] = useState(0);
   const [played, setPlayed] = useState(0);
   const [subtitleList, setSubtitleList] = useState(savedSubtitleList);
+  const history = useHistory();
 
   const videoInfo = {
     videoUrl,
@@ -42,15 +44,14 @@ const WriteSubtitleContainer = ({
       subtitle,
     };
     setSubtitleList(subtitleList.concat(subtitleItem));
-    console.log(subtitleItem);
-    console.log(subtitleList);
   };
 
   const onApplySubtitleList = (type) => {
     if (type === 0) {
-      temporarySaveSubtitleList(subtitleList);
+      temporarySubtitleList(subtitleList);
     } else if (type === 1) {
       applySubtitle(subtitleList);
+      history.push('/');
     }
   };
 
