@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DefaultButton } from '../../GlobalStyle';
 
 export const WriteSubtitleWrapper = styled.div`
   margin-top: 4.938rem;
@@ -31,6 +32,8 @@ export const WriteSubtitleInput = styled.input`
   font-size: 1rem;
   margin-right: 0.625rem;
 `;
+
+export const WriteSubtitleButton = styled(DefaultButton)``;
 
 export const SaveButtonWrapper = styled.div`
   display: flex;

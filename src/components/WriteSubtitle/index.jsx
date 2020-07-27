@@ -25,8 +25,17 @@ const WriteSubtitle = ({
   };
 
   const addSubtitle = () => {
-    addSubtitleList(subtitle);
+    if (subtitle.length > 0) {
+      addSubtitleList(subtitle);
+    }
     setSubtitle('');
+  };
+
+  const applySubtitle = () => {
+    let checkApply = window.confirm('정말로 자막 작성을 완료하시겠습니까?');
+    if (checkApply === true) {
+      onApplySubtitleList(1);
+    }
   };
 
   return (
@@ -52,16 +61,20 @@ const WriteSubtitle = ({
           value={subtitle}
           onChange={changeSubtitle}
         />
-        <DefaultButton width="4.375rem" height="2.688rem" onClick={addSubtitle}>
+        <S.WriteSubtitleButton
+          width="4.375rem"
+          height="2.688rem"
+          onClick={addSubtitle}
+        >
           입력
-        </DefaultButton>
+        </S.WriteSubtitleButton>
       </S.WriteSubtitleInputWrapper>
       <SubtitleList subtitleList={subtitleList} />
       <S.SaveButtonWrapper>
         <S.TemporarySaveSubtitleButton onClick={() => onApplySubtitleList(0)}>
           임시저장
         </S.TemporarySaveSubtitleButton>
-        <S.SaveSubtitleButton onClick={() => onApplySubtitleList(1)}>
+        <S.SaveSubtitleButton onClick={applySubtitle}>
           저장
         </S.SaveSubtitleButton>
       </S.SaveButtonWrapper>

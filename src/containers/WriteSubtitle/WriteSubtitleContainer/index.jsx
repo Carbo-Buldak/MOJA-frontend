@@ -55,6 +55,9 @@ const WriteSubtitleContainer = ({
     }
   };
 
+  // const deleteSubtitle = (id) => {
+  //   setSubtitleList(subtitleList.filter(id => id !== ));
+  // };
   useEffect(() => {
     console.log(savedSubtitleList);
   }, [savedSubtitleList]);
