@@ -16,6 +16,7 @@ import VideoCategoryList from './VideoFeed/VideoCategory/VideoCategoryList';
 import VideoCategoryItem from './VideoFeed/VideoCategory/VideoCategoryItem';
 import VideoFeed from './VideoFeed';
 import WriteSubtitle from './WriteSubtitle';
+import ViewSubtitle from './ViewSubtitle';
 
 export {
   Header,
@@ -36,4 +37,5 @@ export {
   VideoCategoryList,
   VideoCategoryItem,
   WriteSubtitle,
+  ViewSubtitle
 };

@@ -9,7 +9,7 @@ const PopularVideoContainer = ({ videoListData, getSelectedVideoUrl }) => {
   const history = useHistory();
   const getPopularSelectedVideoUrl = (videoUrl, videoTitle) => {
     getSelectedVideoUrl(videoUrl, videoTitle);
-    history.push('/');
+    history.push('/viewSubtitle');
   };
 
   return (
