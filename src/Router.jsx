@@ -7,6 +7,8 @@ import {
   WaitingVideoContainer,
   WriteSubtitleContainer,
   ViewSubtitleContainer,
+  LoginContainer,
+  SignUpContainer
 } from './containers';
 
 const Router = () => (
@@ -16,6 +18,8 @@ const Router = () => (
     <Route path="/waitingVideo" component={WaitingVideoContainer} />
     <Route path="/writeSubtitle" component={WriteSubtitleContainer} />
     <Route path="/viewSubtitle" component={ViewSubtitleContainer} />
+    <Route path="/login" component={LoginContainer} />
+    <Route path="/signup" component={SignUpContainer} />
     <Route component={() => <Redirect to="/" />} />
   </Switch>
 );
