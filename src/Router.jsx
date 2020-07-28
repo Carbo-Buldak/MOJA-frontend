@@ -8,7 +8,7 @@ import {
   WriteSubtitleContainer,
   ViewSubtitleContainer,
   LoginContainer,
-  SignUpContainer
+  SignUpContainer,
   MypageContainer,
 } from './containers';
 
