@@ -20,6 +20,7 @@ import ViewSubtitle from './ViewSubtitle';
 import AccountWrapper from './Account/AccountWrapper';
 import Login from './Account/Login';
 import SignUp from './Account/SignUp'
+import Mypage from './Mypage'
 
 export {
   Header,
@@ -43,5 +44,6 @@ export {
   ViewSubtitle,
   AccountWrapper,
   Login,
-  SignUp
+  SignUp,
+  Mypage
 };

@@ -11,6 +11,7 @@ import video from './video/video';
 import popularVideo from './videoList/popularVideo/popularVideo';
 import waitingVideo from './videoList/waitingVideo/waitingVideo';
 import writeSubtitle from './writeSubtitle/writeSubtitle';
+import mypage from './mypage';
 
 const rootReducer = combineReducers({
   apply,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   popularVideo,
   waitingVideo,
   writeSubtitle,
+  mypage,
 });
 
 const sagaMiddleWare = createSagaMiddleware();

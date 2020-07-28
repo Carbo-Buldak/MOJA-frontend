@@ -25,7 +25,7 @@ const initialState = {
     url: '',
     status: 2,
     author: '신짱구',
-    subtitles: [  ],
+    subtitles: [],
     date: '2020.05.20',
     count: 1200,
   },

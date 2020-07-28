@@ -9,6 +9,7 @@ import {
   ViewSubtitleContainer,
   LoginContainer,
   SignUpContainer
+  MypageContainer,
 } from './containers';
 
 const Router = () => (
@@ -20,6 +21,7 @@ const Router = () => (
     <Route path="/viewSubtitle" component={ViewSubtitleContainer} />
     <Route path="/login" component={LoginContainer} />
     <Route path="/signup" component={SignUpContainer} />
+    <Route path="/mypage" component={MypageContainer} />
     <Route component={() => <Redirect to="/" />} />
   </Switch>
 );
