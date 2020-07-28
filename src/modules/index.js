@@ -5,6 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import apply from './apply/apply';
 import modal from './modal/modal';
+import header from './header/header';
 import videoSort from './videoSort/videoSort';
 import video from './video/video';
 import popularVideo from './videoList/popularVideo/popularVideo';
@@ -14,6 +15,7 @@ import writeSubtitle from './writeSubtitle/writeSubtitle';
 const rootReducer = combineReducers({
   apply,
   modal,
+  header,
   video,
   videoSort,
   popularVideo,
