@@ -7,6 +7,7 @@ import play_btn from './feed_icons/play.png';
 import close_btn from './modal_icons/close.png';
 import delete_icon from './writing_icons/delete_icon.png';
 import write from './writing_icons/write.png';
+import user_icon from './mypage_icons/user.png';
 
 export const logo = {
   moja
@@ -30,4 +31,8 @@ export const modal = {
 export const writing = {
   write,
   delete_icon
+}
+
+export const mypage = {
+  user_icon
 }
