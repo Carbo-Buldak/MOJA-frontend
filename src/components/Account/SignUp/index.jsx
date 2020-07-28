@@ -1,19 +1,54 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Link} from 'react-router-dom'
 
 import * as S from './style';
 import AccountInput from '../AccountInput';
 
-const SignUp = () => {
+const SignUp = ({getSignUpParams}) => {
+  const [email, setEmail] = useState("");
+  const [nickName, setNickName] = useState("");
+  const [password, setPassword] = useState("");
+  const [checkPassword, setCheckPassword] = useState("");
+
+  const changeEmail = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const changeNickName = (e) => {
+    setNickName(e.target.value);
+  }
+
+  const changePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const changeCheckPassword = (e) => {
+    setCheckPassword(e.target.value)
+  }
+
+  const onGetSignUpParams = () => {
+    if(password !== checkPassword){
+      alert("비밀번호가 다릅니다")
+    }
+    else {
+      const signUpParams = {
+        email,
+        nickName,
+        password
+      }
+      getSignUpParams(signUpParams)
+    }
+  }
+
   return (
     <div>
       <div>
-        <AccountInput inputName="이메일"/>
-        <AccountInput inputName="닉네임"/>
-        <AccountInput inputName="비밀번호" type="password"/>
-        <AccountInput inputName="비밀번호 확인" type="password"/>
+        <AccountInput inputName="이메일" value={email} changeValue={changeEmail} />
+        <AccountInput inputName="닉네임" value={nickName} changeValue={changeNickName}/>
+        <AccountInput inputName="비밀번호" type="password" value={password} changeValue={changePassword}/>
+        <AccountInput inputName="비밀번호 확인" type="password" value={checkPassword} changeValue={changeCheckPassword}/>
       </div>
-      <S.ApplySignUpButton>확인</S.ApplySignUpButton>
+      <S.ApplySignUpButton onClick={onGetSignUpParams}>확인</S.ApplySignUpButton>
       <Link to="/">
         <S.GoToMainButton>메인으로</S.GoToMainButton>
       </Link>
