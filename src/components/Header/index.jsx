@@ -8,7 +8,7 @@ import UserProfile from './UserProfile/index';
 import { Link } from 'react-router-dom';
 
 const Header = ({ changeModal }) => {
-  const isLogin = true;
+  const isLogin = false;
   return (
     <S.HeaderWrapper>
       <S.HeaderImmutableContent>
@@ -30,7 +30,9 @@ const Header = ({ changeModal }) => {
           <UserProfile />
         </>
       ) : (
-        <S.goLoginButton>로그인</S.goLoginButton>
+        <Link to="/login">
+          <S.goLoginButton>로그인</S.goLoginButton>
+        </Link>
       )}
     </S.HeaderWrapper>
   );
