@@ -1,12 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux'
 
 import * as S from './style';
 import * as Icon from '../../../assets';
 import VideoList from '../../Atoms/VideoList';
 import VideoType from '../../Atoms/VideoType';
+import {setHeaderVisibility} from '../../../modules/header/header'
 
-const MainVideoList = ({ videoType, videoListData, getSelectedVideoUrl }) => {
+const MainVideoList = ({ videoType, videoListData, getSelectedVideoUrl, setHeaderVisible }) => {
+  useEffect(()=>{
+    setHeaderVisible(true)
+  },[])
   return (
     <S.MainVideoListWrapper>
       {videoType === 0 ? (
@@ -39,4 +44,10 @@ const MainVideoList = ({ videoType, videoListData, getSelectedVideoUrl }) => {
   );
 };
 
-export default MainVideoList;
+const mapDispatchToProps = (dispatch) => {
+	return {
+		setHeaderVisible: (visibility) => dispatch(setHeaderVisibility(visibility))
+	}
+}
+
+export default connect(null, mapDispatchToProps)(MainVideoList);

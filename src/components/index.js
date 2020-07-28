@@ -17,6 +17,9 @@ import VideoCategoryItem from './VideoFeed/VideoCategory/VideoCategoryItem';
 import VideoFeed from './VideoFeed';
 import WriteSubtitle from './WriteSubtitle';
 import ViewSubtitle from './ViewSubtitle';
+import AccountWrapper from './Account/AccountWrapper';
+import Login from './Account/Login';
+import SignUp from './Account/SignUp'
 import Mypage from './Mypage'
 
 export {
@@ -39,5 +42,8 @@ export {
   VideoCategoryItem,
   WriteSubtitle,
   ViewSubtitle,
+  AccountWrapper,
+  Login,
+  SignUp,
   Mypage
 };

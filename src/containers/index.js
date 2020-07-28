@@ -7,10 +7,12 @@ import ModalContainer from './Modal/ModalContainer';
 import ModalHeaderContainer from './Modal/ModalHeaderContainer';
 import CategoryContainer from './VideoFeed/CategoryContainer';
 import PopularVideoContainer from './VideoFeed/PopularVideoContainer';
-import WaitingVideoContainer from './VideoFeed/WaitingVideoContainer'
-import WriteSubtitleContainer from './WriteSubtitle/WriteSubtitleContainer'
-import ViewSubtitleContainer from './ViewSubtitle/ViewSubtitleContainer'
-import MypageContainer from './Mypage/MypageContainer'
+import WaitingVideoContainer from './VideoFeed/WaitingVideoContainer';
+import WriteSubtitleContainer from './WriteSubtitle/WriteSubtitleContainer';
+import ViewSubtitleContainer from './ViewSubtitle/ViewSubtitleContainer';
+import LoginContainer from './Account/LoginContainer';
+import SignUpContainer from './Account/SignUpContainer';
+import MypageContainer from './Mypage/MypageContainer';
 
 export {
   MainContainer,
@@ -25,5 +27,7 @@ export {
   WaitingVideoContainer,
   WriteSubtitleContainer,
   ViewSubtitleContainer,
+  LoginContainer,
+  SignUpContainer,
   MypageContainer
 }
