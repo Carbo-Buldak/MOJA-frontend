@@ -16,11 +16,15 @@ const Login = ({getLoginParams}) => {
   }
 
   const onGetLoginParams = () => {
-    const loginParams = {
-      email,
-      password
-    }
-    getLoginParams(loginParams)
+    if(email.length === 0 || password.length=== 0){
+      alert("빈 칸이 없는지 확인해주세요")
+    }else{
+      const loginParams = {
+        email,
+        password
+      }
+      getLoginParams(loginParams)
+  }
   }
 
     return (
