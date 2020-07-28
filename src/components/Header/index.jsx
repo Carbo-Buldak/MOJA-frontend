@@ -27,7 +27,9 @@ const Header = ({ changeModal }) => {
           >
             자막 요청하기
           </DefaultButton>
-          <UserProfile />
+          <Link to="/mypage">
+            <UserProfile userName="김도마동망고" />
+          </Link>
         </>
       ) : (
         <S.goLoginButton>로그인</S.goLoginButton>
