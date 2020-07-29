@@ -62,7 +62,8 @@ export const searchVideoReq = async (keyWord) => {
   const response = await instanceAxios.get(
     `/video?searching=true&keyword=${keyWord}`,
   );
-  return response.data;
+  console.log(response.data.videos)
+  return response.data.videos;
 };
 
 export const addTemporarySubtitleReq = async (addSubtitleParam) => {
