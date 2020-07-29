@@ -12,10 +12,15 @@ export const getSelectedVideoUrl = (videoUrl, videoTitle) => ({
   },
 });
 
-export const getVideoInfo = (videoUrl) => ({
+// export const getVideoInfo = (videoUrl) => ({
+//   type: GET_VIDEO_INFO,
+//   payload: videoUrl,
+// });
+
+export const getVideoInfo = (videoInfo) => ({
   type: GET_VIDEO_INFO,
-  payload: videoUrl,
-});
+  payload: videoInfo
+})
 
 const initialState = {
   videoUrl: '',
@@ -41,7 +46,7 @@ export default function video(state = initialState, action) {
       };
     case GET_VIDEO_INFO:
       return {
-        ...state,
+        ...state, video: action.payload
       };
     case GET_VIDEO_INFO_SUCCESS:
       return {

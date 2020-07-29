@@ -2,10 +2,15 @@ export const GET_USER_DATA = 'GET_USER_DATA';
 export const GET_USER_DATA_SUCCESS = 'GET_USER_DATA_SUCCESS';
 export const GET_USER_DATA_FAILURE = 'GET_USER_DATA_FAILURE';
 
-export const getUserData = (token) => ({
+// export const getUserData = (token) => ({
+//   type: GET_USER_DATA,
+//   payload: token,
+// });
+
+export const getUserData = (userData) => ({
   type: GET_USER_DATA,
-  payload: token,
-});
+  payload: userData
+})
 
 const initialState = {
   user: {
@@ -29,7 +34,7 @@ const initialState = {
         title: '노틸러스 랜덤 타워 디펜스',
         subtitles: [{
           playedTime: 0,
-          subtitle: '짱아야',
+          subtitle: '엌ㅋㅋ라이엇 ',
         }, ],
       },
     ],
@@ -45,6 +50,7 @@ export default function mypage(state = initialState, action) {
     case GET_USER_DATA:
       return {
         ...state,
+        user: action.payload
       };
     case GET_USER_DATA_SUCCESS:
       return {

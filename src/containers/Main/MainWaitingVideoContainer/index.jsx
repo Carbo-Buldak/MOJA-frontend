@@ -18,7 +18,7 @@ const MainWaitingVideoContainer = ({
     history.push('/writeSubtitle');
   };
   useEffect(() => {
-    getVideoListReq(1, 'count', 0, 8)
+    getVideoListReq(`status=${0}`, 'count', 0, 8)
       .then((videoList) => {
         getWaitingVideo(videoList);
         console.log(videoList);

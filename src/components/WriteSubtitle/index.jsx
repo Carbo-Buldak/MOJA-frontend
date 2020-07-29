@@ -32,6 +32,12 @@ const WriteSubtitle = ({
     setSubtitle('');
   };
 
+  const addCommentKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      addSubtitle();
+    }
+  };
+
   const applySubtitle = () => {
     let checkApply = window.confirm('정말로 자막 작성을 완료하시겠습니까?');
     if (checkApply === true) {
@@ -61,6 +67,7 @@ const WriteSubtitle = ({
           name="writeSubtitle"
           value={subtitle}
           onChange={changeSubtitle}
+          onKeyPress={(e) => addCommentKeyPress(e)}
         />
         <S.WriteSubtitleButton
           width="4.375rem"

@@ -38,6 +38,7 @@ export const WriteSubtitleButton = styled(DefaultButton)``;
 export const SaveButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 `;
 
 export const SaveSubtitleButton = styled.button`

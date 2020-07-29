@@ -8,6 +8,7 @@ import {
   applySubtileList,
   temporarySaveSubtitleList,
 } from '../../../modules/writeSubtitle/writeSubtitle';
+import { addTemporarySubtitleReq, addSubtitleReq } from '../../../lib/api';
 
 const WriteSubtitleContainer = ({
   savedSubtitleList,
@@ -19,6 +20,7 @@ const WriteSubtitleContainer = ({
   const [duration, setDuration] = useState(0);
   const [played, setPlayed] = useState(0);
   const [subtitleList, setSubtitleList] = useState(savedSubtitleList);
+  const token = localStorage.getItem('token');
   const history = useHistory();
 
   const videoInfo = {
@@ -47,11 +49,33 @@ const WriteSubtitleContainer = ({
   };
 
   const onApplySubtitleList = (type) => {
+    const addSubtitleParam = {
+      token,
+      title: videoInfo.videoTitle,
+      url: videoInfo.videoUrl,
+      subtitles: subtitleList,
+    };
     if (type === 0) {
-      temporarySubtitleList(subtitleList);
+      addTemporarySubtitleReq(addSubtitleParam)
+        .then((subtitle) => {
+          temporarySubtitleList(subtitle);
+          const isFinishWriting = window.confirm(
+            '임시저장이 완료되었습니다., 나가시겠습니까?',
+          );
+          if (isFinishWriting === true) {
+            history.push('/');
+          }
+        })
+        .catch((e) => console.log(e));
     } else if (type === 1) {
-      applySubtitle(subtitleList);
-      history.push('/');
+      console.log(token);
+
+      addSubtitleReq(addSubtitleParam)
+        .then((subtitle) => {
+          applySubtitle(subtitle);
+          history.push('/');
+        })
+        .catch((e) => console.log(e));
     }
   };
 
@@ -62,7 +86,8 @@ const WriteSubtitleContainer = ({
   };
 
   useEffect(() => {
-    console.log(savedSubtitleList);
+    console.log(`savedSubtitleList:`, savedSubtitleList);
+    console.log(subtitleList);
   }, [savedSubtitleList]);
   return (
     <div>

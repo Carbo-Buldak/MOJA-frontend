@@ -22,6 +22,10 @@ export const goLoginButton = styled.button`
   font-size: 1.25rem;
 `;
 
+export const GoMypageButton = styled.button`
+  font-size: 1.1rem;
+`;
+
 export const HeaderImmutableContent = styled.div`
   display: flex;
   flex-direction: row;

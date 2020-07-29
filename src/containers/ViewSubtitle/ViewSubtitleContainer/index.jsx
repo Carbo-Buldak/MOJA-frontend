@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { ViewSubtitle } from '../../../components';
 import { getVideoInfo } from '../../../modules/video/video';
 import setTimeToString from '../../../utils/setTimeToString';
+import { getVideoInfoReq } from '../../../lib/api';
 
 const ViewSubtitleContainer = ({
   videoUrl,
@@ -46,7 +47,12 @@ const ViewSubtitleContainer = ({
   };
 
   useEffect(() => {
-    getVideoDetailInfo(videoUrl);
+    // getVideoDetailInfo(videoUrl);
+    getVideoInfoReq(videoUrl)
+      .then((video) => {
+        getVideoDetailInfo(video);
+      })
+      .catch((e) => console.log(e));
   }, []);
 
   useEffect(() => {

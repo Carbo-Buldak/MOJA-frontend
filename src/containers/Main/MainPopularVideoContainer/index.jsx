@@ -20,7 +20,7 @@ const MainPopularVideoContainer = ({
   };
 
   useEffect(() => {
-    getVideoListReq(0, 'count', 0, 8)
+    getVideoListReq('', 'count', 0, 8)
       .then((videoList) => getPopularVideoList(videoList))
       .catch((e) => console.log(e));
   }, []);

@@ -21,7 +21,7 @@ const PopularVideoContainer = ({
 
   useEffect(() => {
     console.log(sorting);
-    getVideoListReq(0, sorting, 0, 100)
+    getVideoListReq('', sorting, 0, 100)
       .then((videoList) => getPopularVideoList(videoList))
       .catch((e) => console.log(e));
   }, [sorting]);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import * as Icon from '../../assets/index';
 import * as S from './style';
@@ -7,7 +8,8 @@ import SearchVideo from './SearchVideo/index';
 import UserProfile from './UserProfile/index';
 import { Link } from 'react-router-dom';
 
-const Header = ({ changeModal, isLogin, handleLogOut }) => {
+const Header = ({ changeModal, isLogin, handleLogOut, userName }) => {
+  console.log(userName);
   return (
     <S.HeaderWrapper>
       <S.HeaderImmutableContent>
@@ -27,7 +29,8 @@ const Header = ({ changeModal, isLogin, handleLogOut }) => {
             자막 요청하기
           </DefaultButton>
           <Link to="/mypage">
-            <UserProfile userName="김도마동망고" />
+            {/* <UserProfile userName={userName} /> */}
+            <S.GoMypageButton>마이페이지 가기</S.GoMypageButton>
           </Link>
           <S.LogOutButton onClick={handleLogOut}>로그아웃하기</S.LogOutButton>
         </>
