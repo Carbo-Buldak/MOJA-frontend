@@ -5,6 +5,7 @@ import {
   MainContainer,
   PopularVideoContainer,
   WaitingVideoContainer,
+  SearchVideoFeedContainer,
   WriteSubtitleContainer,
   ViewSubtitleContainer,
   LoginContainer,
@@ -22,6 +23,7 @@ const Router = () => (
     <Route path="/login" component={LoginContainer} />
     <Route path="/signup" component={SignUpContainer} />
     <Route path="/mypage" component={MypageContainer} />
+    <Route path="/search" component={SearchVideoFeedContainer} />
     <Route component={() => <Redirect to="/" />} />
   </Switch>
 );

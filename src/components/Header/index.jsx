@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import * as Icon from '../../assets/index';
 import * as S from './style';
 import { DefaultButton } from '../../GlobalStyle';
+import { SearchVideoContainer } from '../../containers';
 import SearchVideo from './SearchVideo/index';
 import UserProfile from './UserProfile/index';
-import { Link } from 'react-router-dom';
 
 const Header = ({ changeModal, isLogin, handleLogOut, userName }) => {
   console.log(userName);
@@ -16,7 +17,7 @@ const Header = ({ changeModal, isLogin, handleLogOut, userName }) => {
         <Link to="/">
           <S.Logo src={Icon.logo.moja} />
         </Link>
-        <SearchVideo />
+        <SearchVideoContainer />
       </S.HeaderImmutableContent>
       {isLogin ? (
         <>

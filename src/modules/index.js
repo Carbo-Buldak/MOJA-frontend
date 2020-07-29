@@ -10,6 +10,7 @@ import videoSort from './videoSort/videoSort';
 import video from './video/video';
 import popularVideo from './videoList/popularVideo/popularVideo';
 import waitingVideo from './videoList/waitingVideo/waitingVideo';
+import searchVideoList from './videoList/searchVideoList/searchVideoList';
 import writeSubtitle from './writeSubtitle/writeSubtitle';
 import mypage from './mypage';
 
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   videoSort,
   popularVideo,
   waitingVideo,
+  searchVideoList,
   writeSubtitle,
   mypage,
 });
