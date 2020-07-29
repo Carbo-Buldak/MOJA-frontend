@@ -1,14 +1,21 @@
+import video from "../../video/video";
+
 export const GET_POPULAR_VIDEO = 'GET_POPULAR_VIDEO';
 export const GET_POPULAR_VIDEO_SUCCESS = 'GET_POPULAR_VIDEO_SUCCESS';
 export const GET_POPULAR_VIDEO_FAILURE = 'GET_POPULAR_VIDEO_FAILURE';
 
-export const getPopularVideo = (sorting, skips) => ({
+// export const getPopularVideo = (sorting, skips) => ({
+//   type: GET_POPULAR_VIDEO,
+//   payload: {
+//     sorting,
+//     skips,
+//   },
+// });
+
+export const getPopularVideo = (videoList) => ({
   type: GET_POPULAR_VIDEO,
-  payload: {
-    sorting,
-    skips,
-  },
-});
+  payload: videoList
+})
 
 const initialState = {
   videoList: [{
@@ -25,6 +32,7 @@ export default function popularVideo(state = initialState, action) {
     case GET_POPULAR_VIDEO:
       return {
         ...state,
+        videoList: action.payload
       };
     case GET_POPULAR_VIDEO_SUCCESS:
       return {

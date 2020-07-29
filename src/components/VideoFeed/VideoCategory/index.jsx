@@ -3,12 +3,29 @@ import React, { useState } from 'react';
 import * as S from './style';
 import VideoCategoryList from './VideoCategoryList';
 
-const VideoCategory = ({ categoryName, width, isPopularVideo }) => {
+const VideoCategory = ({
+  categoryName,
+  width,
+  isPopularVideo,
+  changeVideoSorting,
+}) => {
   const [selectedItem, setSelectedItem] = useState('최신순');
   const [isVisible, setIsVisible] = useState(false);
 
+  const mapCategoryToSortingStatus = (selectedItem) => {
+    if (selectedItem === '최신순') {
+      console.log(`selectedItem ${selectedItem}`);
+      return 'date';
+    } else if (selectedItem === '조회수순' || '요청수') {
+      console.log(`selectedItem ${selectedItem}`);
+      return 'count';
+    }
+  };
+
   const getSelectedCategoryItem = (selectedItem) => {
     setSelectedItem(selectedItem);
+    console.log(selectedItem);
+    changeVideoSorting(mapCategoryToSortingStatus(selectedItem));
     setIsVisible(false);
   };
 

@@ -11,7 +11,7 @@ const initialState = {
 }
 
 export default function videoSort(state = initialState, action) {
-  switch (action.payload) {
+  switch (action.type) {
     case CHANGE_VIDEO_SORTING:
       return {
         ...state, sorting: action.payload
