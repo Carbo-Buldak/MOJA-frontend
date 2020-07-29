@@ -1,5 +1,3 @@
-import video from "../../video/video";
-
 export const GET_POPULAR_VIDEO = 'GET_POPULAR_VIDEO';
 export const GET_POPULAR_VIDEO_SUCCESS = 'GET_POPULAR_VIDEO_SUCCESS';
 export const GET_POPULAR_VIDEO_FAILURE = 'GET_POPULAR_VIDEO_FAILURE';
