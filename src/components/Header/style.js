@@ -26,3 +26,7 @@ export const HeaderImmutableContent = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const LogOutButton = styled.button`
+  font-size: 0.9rem;
+`;

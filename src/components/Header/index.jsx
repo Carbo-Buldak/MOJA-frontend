@@ -7,8 +7,7 @@ import SearchVideo from './SearchVideo/index';
 import UserProfile from './UserProfile/index';
 import { Link } from 'react-router-dom';
 
-const Header = ({ changeModal }) => {
-  const isLogin = false;
+const Header = ({ changeModal, isLogin, handleLogOut }) => {
   return (
     <S.HeaderWrapper>
       <S.HeaderImmutableContent>
@@ -30,6 +29,7 @@ const Header = ({ changeModal }) => {
           <Link to="/mypage">
             <UserProfile userName="김도마동망고" />
           </Link>
+          <S.LogOutButton onClick={handleLogOut}>로그아웃하기</S.LogOutButton>
         </>
       ) : (
         <Link to="/login">
