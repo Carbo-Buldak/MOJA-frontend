@@ -4,7 +4,7 @@ import * as S from './style';
 import * as Icon from '../../../../assets';
 
 const VideoListItem = React.memo(
-  ({ url, title, count, getSelectedVideoUrl }) => {
+  ({ url, title, count, getSelectedVideoUrl, isSubtitledVideo }) => {
     const [isHover, setIsHover] = useState(false);
     const videoThumbnail = `http://img.youtube.com/vi/${url}/hqdefault.jpg`;
 
@@ -27,7 +27,9 @@ const VideoListItem = React.memo(
         <S.VideoInfo>
           <S.VideoInfoWrapper>
             <S.VideoName>{title}</S.VideoName>
-            <S.VideoViewCount>조회수 {count}</S.VideoViewCount>
+            <S.VideoViewCount>
+              {isSubtitledVideo ? '조회수' : '요청수'} {count}
+            </S.VideoViewCount>
           </S.VideoInfoWrapper>
         </S.VideoInfo>
       </S.VideoItemWrapper>

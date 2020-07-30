@@ -27,6 +27,11 @@ const VideoFeed = ({ videoType, videoListData, getSelectedVideoUrl }) => {
             <Link to="/popularVideo">
               <S.MoveOtherVideoBtn>인기영상 보러가기</S.MoveOtherVideoBtn>
             </Link>
+            <VideoList
+              videoListData={videoListData}
+              getSelectedVideoUrl={getSelectedVideoUrl}
+              isSubtitledVideo={false}
+            />
           </>
         ) : (
           <>
@@ -44,12 +49,13 @@ const VideoFeed = ({ videoType, videoListData, getSelectedVideoUrl }) => {
                 자막을 기다리는 영상 보러가기
               </S.MoveOtherVideoBtn>
             </Link>
+            <VideoList
+              videoListData={videoListData}
+              getSelectedVideoUrl={getSelectedVideoUrl}
+              isSubtitledVideo={true}
+            />
           </>
         )}
-        <VideoList
-          videoListData={videoListData}
-          getSelectedVideoUrl={getSelectedVideoUrl}
-        />
       </S.MainVideoListWrapper>
     </S.VideoFeedWrapper>
   );

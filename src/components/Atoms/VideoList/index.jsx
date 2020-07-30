@@ -3,7 +3,11 @@ import React from 'react';
 import * as S from './style';
 import VideoListItem from './VideoListItem/index';
 
-const VideoList = ({ videoListData, getSelectedVideoUrl }) => {
+const VideoList = ({
+  videoListData,
+  getSelectedVideoUrl,
+  isSubtitledVideo,
+}) => {
   return (
     <>
       {videoListData !== null && (
@@ -16,6 +20,7 @@ const VideoList = ({ videoListData, getSelectedVideoUrl }) => {
                 title={video.title}
                 count={video.count}
                 getSelectedVideoUrl={getSelectedVideoUrl}
+                isSubtitledVideo={isSubtitledVideo}
               />
             ))
           ) : (

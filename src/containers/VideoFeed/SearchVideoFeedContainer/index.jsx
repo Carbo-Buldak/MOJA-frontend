@@ -21,6 +21,7 @@ const SearchVideoFeedContainer = ({ videoListData, getSelectedVideoUrl }) => {
       <VideoList
         videoListData={subtitledVideo}
         getSelectedVideoUrl={getSubtitledSelectedVideoUrl}
+        isSubtitledVideo={true}
       />
     );
   };
@@ -38,6 +39,7 @@ const SearchVideoFeedContainer = ({ videoListData, getSelectedVideoUrl }) => {
       <VideoList
         videoListData={requestedVideo}
         getSelectedVideoUrl={getRequestedSelectedVideoUrl}
+        isSubtitledVideo={false}
       />
     );
   };
