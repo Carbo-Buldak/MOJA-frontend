@@ -1,8 +1,4 @@
 import axios from 'axios';
-import {
-  retry
-} from 'redux-saga/effects';
-
 const instanceAxios = axios.create({
   baseURL: 'http://52.78.174.72:5000/api',
 });
