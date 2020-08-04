@@ -9,11 +9,11 @@ import { HeaderContainer, ModalContainer } from './containers';
 const App = () => {
   return (
     <BrowserRouter>
-      <GlobalStyle />
       <ModalContainer />
       <HeaderContainer />
       <Router />
       <Footer />
+      <GlobalStyle />
     </BrowserRouter>
   );
 };
